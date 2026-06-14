@@ -2,6 +2,13 @@
 
 A robust RESTful API for a Personal Blogging Platform, built with Node.js, Express, and MySQL.
 
+**GitHub Repository:** [https://github.com/ahmed-azab271/Personal_Blog_API_Meta](https://github.com/ahmed-azab271/Personal_Blog_API_Meta)
+
+## The Database Choice and Why
+**MySQL** was chosen for this project for the following reasons:
+1. **Relational Data Modeling:** A blogging platform naturally requires strict relationships (specifically, a One-to-Many relationship between Users and Posts). MySQL is perfectly suited to enforce these foreign key constraints and ensure data integrity.
+2. **Raw SQL Implementation:** Instead of relying on an ORM, I chose to use the `mysql2` library with raw SQL queries and prepared statements. This demonstrates a deep, fundamental understanding of database interactions, SQL JOINs (used for fetching author details with posts), and protection against SQL injection.
+
 ## Features
 - **User Authentication:** Register and Login with JWT and bcrypt password hashing.
 - **Blog Posts:** CRUD operations for blog posts.
@@ -18,8 +25,8 @@ A robust RESTful API for a Personal Blogging Platform, built with Node.js, Expre
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd blog-api
+   git clone https://github.com/ahmed-azab271/Personal_Blog_API_Meta.git
+   cd Personal_Blog_API_Meta
    ```
 
 2. Install dependencies:
@@ -34,10 +41,10 @@ A robust RESTful API for a Personal Blogging Platform, built with Node.js, Expre
    ```
 
 4. Set up the environment variables:
-   Ensure your `.env` file contains your MySQL connection string. For example, if you are using XAMPP (root with no password):
+   Ensure your `.env` file contains your MySQL connection string. Create a `.env` file in the root if it doesn't exist:
    ```env
-   DATABASE_URL="mysql://root:@localhost:3306/blog_db"
-   JWT_SECRET="supersecretjwtkeythatshouldbechanged"
+   DATABASE_URL="mysql://root:YOUR_PASSWORD@localhost:3306/blog_db"
+   JWT_SECRET="8f9b3a4c5e6d7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a"
    PORT=3000
    ```
 
